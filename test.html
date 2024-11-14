@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book Comments</title>
+</head>
+<body>
+  <div id="output">Loading...</div>
+  <script>
+    try {
+      // Attempt to read the 'bookID' query parameter
+      var urlParams = new URLSearchParams(window.location.search);
+      var bookID = urlParams.get('bookID');
+      
+      // Display the bookID value for testing
+      if (bookID) {
+        document.getElementById("output").innerText = "Book ID: " + bookID;
+      } else {
+        document.getElementById("output").innerText = "No bookID found in URL.";
+      }
+    } catch (error) {
+      document.getElementById("output").innerText = "Error: " + error.message;
+    }
+  </script>
+</body>
+</html>
